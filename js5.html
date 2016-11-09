@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>javascript变量作用域</title>
+</head>
+<body>
+<script type="text/javascript">
+    //在没有函数包裹下var表示全局作用域的变量
+    //在任何情况没有var表示window对象下的属性既全局变量
+
+    //var foo = "hello world";          //初始化变量赋值和申明 一起
+    //foo = "hello world 2"             //最后申明的变量会覆盖之前申明的变量
+    //document.write(foo + "<br/>");     //打出来的是最后申明 的foo
+    // document.write(window.foo == foo);//如果相等打出来的便是true
+
+
+    //    function func() {
+    //        foo = "hello"
+    //    }
+    //    func();
+    //    document.write(window.foo == "hello")//因为没有var申明的为全局变量意思就是window下的属性
+
+    //    function func() {
+    //        var foo = "hello"
+    //    }
+    //    func();
+    //    document.write(window.foo == "hello")//但是有函数包裹的var申明为这个函数的局部变量只有该函数才可以访问
+
+    var yourName = "Allison"//全局变量
+    myName = "Ezuo"
+    function ChangeName() {
+        document.write("your old name is " + yourName +
+        "<br/>");
+        document.write("my old name is " + myName + "<br/>")
+        var yourName = "李丹";//局部变量只有该函数类可以使用
+        myName = "罗毅";//全局变量会覆盖之前申明的
+        document.write(yourName + "likes" + myName+ "<br/>");
+    }
+    ChangeName();
+    document.write(yourName + "likes" + myName+ "<br/>");
+</script>
+
+</body>
+</html>
