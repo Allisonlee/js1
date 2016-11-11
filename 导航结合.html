@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>导航css无图片实现动画js写出结构</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #333;
+            padding:20px;
+            font:12px Verdana,Geneva,sans-serif;
+        }
+        ul{
+            list-style: none;
+        }
+        .nav{
+            height:30px;
+        }
+        .nav li{
+            float: left;
+        }
+        .nav li a{
+            text-decoration: none;
+            color: #fff;
+            height: 20px;
+            line-height: 20px;
+            padding:0 20px;
+            display: block;
+            font-weight: bold;
+        }
+        .nav li a:hover{
+            color:#333;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            border-radius: 20px;
+            -moz-box-shadow: 0px 0px 4px #ffffff;
+            -webkit-box-shadow: 0px 0px 4px #ffffff;
+            box-shadow:0px 0px 4px #ffffff;
+            background-image: 
+            -moz-linear-gradient(top,#eee,#666);
+            background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#eee),color-stop(1,#666));
+            text-shadow:0 1px 0 #fff;
+
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    //数组怎么遍历出来
+    var navs1 = ["Home", "About us", "Products", "Services", "Contact"];
+    document.write('<ul class="nav">');
+    for (var i in navs1) {
+        document.write('<li><a href="#">' + navs1[i] + '</a></li>');
+    }
+
+    document.write('</ul>');
+
+
+    var navs2 = ["主页", "关于我们", "产品介绍", "服务中心", "联系我们"];
+    document.write('<ul class="nav">');
+    for (var i = 0; i < navs2.length; i++) {
+        document.write('<li><a href="#">' + navs2[i] + '</a></li>');
+    }
+
+    document.write('</ul>');
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>将图片放入数组中随机加载图片</title>
+</head>
+<body>
+<script type="text/javascript">
+    var iconImages = [];//一般不给长度
+    iconImages[0] = "img/pig.jpg";
+    iconImages[1] = "img/tl.gif";
+    iconImages[2] = "img/xihua.jpg";
+    iconImages[3] = "img/xl.png";
+
+    var randomImagesIndex = Math.round(Math.random()*4);//有几个元素长度，设相应的随机数
+
+    document.write("<img src=\"" + iconImages[randomImagesIndex]
+    +"\" alt=\"\"/>");
+
+
+
+</script>
+</body>
+</html>

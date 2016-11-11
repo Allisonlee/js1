@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js数组</title>
+</head>
+<body>
+<script type="text/javascript">
+    var arr1 = new Array("Allison", "Enzo");
+    var arr2 = ["tom", "cat"];    //自变量的申明
+    var arr3 = arr1.push("king");//添加元素
+
+    document.write(arr1.length);
+    document.write("<br/>");
+    document.write(arr1[0] + "-" +arr1[1]);
+    document.write("<br/>");
+    document.write(arr2[0] + "-" +arr2[1]);
+    document.write("<br/>");
+
+
+
+
+    //第二个例子 自变量赋值方式
+    var arr = [];
+    // var arr = new Array("size");用申明的方式可以设定其元素个数，未赋值的个数将在浏览器显示undefined
+    arr[0] = "html";
+    arr[1] = "js";
+    arr[2] = "css";
+    arr[3] = "ajax";
+
+    document.write(arr.length);
+
+
+    arr["name"] = "dan";
+    arr["age"]  =  25 ;
+
+    document.write("<br/>");
+    document.write(arr1[0] + "-" + arr["name"]);
+
+</script>
+</body>
+</html>

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>js3获取dom节点</title>
     <script>
-        window.onload=function(){
-          var logo = document.getElementById("logo");
-           // alert(logo.title)
-            logo.style.color="red";
-          var links=document.getElementsByTagName("a");
-            //alert(links[2].innerHTML ="Hello");
+        window.onload = function () {
+            var logo = document.getElementById("logo");
+            alert(logo.title)
+            logo.style.color = "red";
+            var links = document.getElementsByTagName("a");
+            alert(links[2].innerHTML = "Hello");
             alert(links[0].className);//查找元素及给元素赋值都是OK的
-            for(var i=0;i<links.length;i++){
-                links[i].style.color="green"//遍历links里面的元素
+            for (var i = 0; i < links.length; i++) {
+                links[i].style.color = "green"//遍历links里面的元素
             }
         }
     </script>
