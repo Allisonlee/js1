@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js函数申明方式</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    //声明样式静态函数
+    function functionName1(arg) {
+        document.write("声明式静态函数-" + arg);
+        document.write("<br/>");
+    }
+    functionName1("function");//调用函数--理解形参和实参
+
+
+    //匿名函数
+    var functionName2 = new Function("arg", "document.write('匿名函数-' + arg);document.write('<br/>')");
+    functionName2("function");
+
+    (function (arg) {
+        document.write("匿名函数-" + arg);
+        document.write("<br/>");
+    })("function");
+
+
+    //函数直接量
+    var functionName3 = function (arg) {
+        document.write("函数直接量-" + arg);
+        document.write("<br/>");
+    }
+    functionName3("function");
+
+
+
+
+
+
+
+    //函数的执行和引用
+    function func() {
+        document.write("hello world");
+    }
+    func();//执行---调用
+
+
+
+    function func1() {
+        document.write("你好明天");
+    }
+    var say = func1;//赋值给say
+    alert(typeof say);
+    alert(say());
+    say();
+    func1();//say 和func1一样
+
+</script>
+</body>
+</html>

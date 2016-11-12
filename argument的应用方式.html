@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>argument的应用实例</title>
+</head>
+<body>
+
+<ul>
+    <li id="html">html</li>
+    <li id="css">css</li>
+    <li id="js">js</li>
+</ul>
+
+<script type="text/javascript">
+
+    //想改变某个元素的样式,只能获取一个元素，有点麻烦
+    /*
+    var html = document.getElementById("html");
+    html.style.color="red";
+    */
+
+     //JQuery很强大可以获取很多元素
+    //$("#html","#css","js")
+
+
+
+    //自己创建一个JQuery库给window加注册一个属性方法，在注册一个$方法
+    window['jquery'] = {};//new Object();
+    window['jquery']['$'] = $;
+
+    function $(){
+        var elements = [];//定义了个数组
+        for(var i=0;i<arguments.length;i++){//循环遍历参数个数
+            element = arguments[i];//获取了之后赋值给新的变量
+            if( typeof element == "string"){//判断写的参数属性
+                element = document.getElementById(element);}if(arguments.length == 1){
+                return element;
+            }
+            elements.push(element);//将element插入变量elements
+        }
+        return elements;//返回
+    }
+
+    var html = jquery.$("html");
+    html.style.color="red";
+
+    var items = jquery.$("html","css","js");
+    for( var i=0;i<items.length;i++){
+        items[i].style.color = "yellow";
+    }
+
+
+
+</script>
+</body>
+</html>

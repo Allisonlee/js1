@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>arguments 对象</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    /*
+     function sayHello() {
+
+     alert(arguments.length);
+     document.write(arguments.length);
+     alert(arguments[0] + "-" + arguments[1]);
+     }
+     sayHello("allison", "enzo");
+     */
+
+
+    /*
+    function func() {
+        for (var i = 0, arr = [];
+             i < arguments.length;
+             i++
+        ) {
+            arr.push(arguments[i]);
+            alert(arr.join("-"));
+        }
+        alert(typeof arr);
+    }
+    func("vera", "yuke");
+    */
+
+    //模拟函数重载
+    function funTest(){
+        switch (arguments.length){
+            case 0:
+                alert("没有参数");
+                break;//如果不使用break语句的话，结果将会反复循环，就使用return语句；
+            case 1:
+                alert("1各参数" + arguments[0]);
+                break;
+            case 2:
+                alert("2个参数" + arguments[0] + arguments[1]);
+                break;
+            case 3:
+                alert("2个参数" + arguments[0] + arguments[1] + arguments[2]);
+                break;
+        }
+    }
+    funTest();
+    funTest(1);
+    funTest(1,2);
+    funTest(1,2,3);
+
+
+
+
+</script>
+</body>
+</html>

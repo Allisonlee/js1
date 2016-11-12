@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js if条件语句</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+
+
+    if (100 < 10) {
+        document.write("真");
+    } else {
+        document.write("假");
+    }
+
+
+
+
+
+    function checkChange() {
+        var username = document.getElementById("username");
+
+        if (username.value == "") {
+            alert("用户名不能为空");
+        } else if (username.value == "admin" || username.value == "yukee") {
+            alert("恭喜你！" + username.value);
+        } else if (username.value == "tik") {
+            alert("对不起，该用户已过期，请充值再需用!");
+        } else {
+            alert("对不起，找不到该用户，请注册！");
+        }
+    }
+
+
+</script>
+
+
+
+
+
+<form action="" method="post">
+    <input type="text" id="username" name="username"/>
+    <input type="submit" value="提交"
+           onclick="checkChange();"/>
+</form>
+
+
+
+
+
+
+</body>
+</html>

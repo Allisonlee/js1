@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js回调函数</title>
+</head>
+<body>
+<script type="text/javascript">
+    //回调函数就是通过函数指针调用的函数，把一个函数的地址作为参数传递给另一个函数
+    //var obj = new Object()
+
+    function func1() {
+
+    }
+    function func2() {
+
+    }
+    func2(func1());//在第二个函数中调用第一个函数
+
+
+    //创建一个存储色彩的容器
+    var color = [];
+    color[0] = [0, 0, 0];
+    color[1] = [255, 255, 255];
+    color[2] = [0, 0, 255];
+    color[3] = [255, 0, 0];
+    color[4] = [0, 255, 0];
+    color[5] = [128, 225, 999];
+    color[6] = [-128, 225, 225];
+    color[7] = [-128, 225, 225,788];
+
+
+
+    //过滤颜色的范围
+    function checkColor(element) {
+        return (element >= 0 && element <= 255);
+    }
+    //过滤色彩值的索引个数
+    function checkCount(index) {
+        return (index.length == 3);
+    }
+    //遍历色彩容器的值出来，再执行调用函数
+    var checkColors = [];
+    for (var i in color) {
+        checkColors[i] = color[i].filter(checkColor);
+    }
+
+    var checkCounts = checkColors.filter(checkCount);
+    for (var i in checkCounts) {
+        document.write("<p>" + checkCounts[i] + "</p>");
+        var ps = document.getElementsByTagName("p");
+        for (var i = 0; i< ps.length; i++) {//注意小于等于都不行
+            ps[i].style.background = "rgb(" + checkCounts[i] + ")";
+        }
+    }
+
+
+    /*
+    window.onload = function () {
+        document.body.style.background = "rgb(" + color[4] + ")";//"rgb(255,0,0)"
+    }
+    */
+
+</script>
+</body>
+</html>

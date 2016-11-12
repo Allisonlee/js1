@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ecmascript运算字符</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+     var i = 100;
+     i += 100;
+     alert(i);
+     */
+    //函数中逻辑运算扮演的角色
+    function checkChange() {
+        var username = document.getElementById("username");
+        if (username.value == "admin" || username.value == "admin1985") {
+            alert("恭喜你," + username.value);
+        } else {
+            alert("用户名为空");
+        }
+    }
+
+</script>
+<form action="" method="post">
+    <input id="username" name="username" type="text"/>
+    <input type="submit" value="Submit"
+           onclick="checkChange();"/>
+</form>
+</body>
+</html>
