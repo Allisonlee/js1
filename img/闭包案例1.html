@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>闭包案例1</title>
+    <style type="text/css">
+        p {
+            background: #ff6;
+            border: 1px solid #fc0;
+            border-radius: 5%;
+            padding: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<p id="domObj">恭喜你注册成功！</p>
+
+<script type="text/javascript">
+
+    //注册框设置时间自动消失实例
+    var domObj = document.getElementById("domObj");
+    setTimeout(function () {
+        domObj.style.display = "none";
+    }, 1000);//设置时间函数（函数）
+
+
+
+    //自动弹出文本框实例
+    function displayBox(msg, time) {
+        setTimeout(function () {
+            var boxMessage = document.createElement("div");
+            var boxText = document.createTextNode(msg);
+            boxMessage.appendChild(boxText);
+            document.body.appendChild(boxMessage);
+            boxMessage.style.padding = "10px";
+            boxMessage.style.background = "#ff6";
+            boxMessage.style.borderBottom = "10px solid red";
+        }, time)
+    }
+    displayBox("恭喜你成功修炼到JavaScript的闭包阶段", 3000);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用匿名函数来隐藏全局作用域变量</title>
+</head>
+<body>
+<script type="text/javascript">
+    (function () {
+        var message = "hello world";//放入匿名函数中形成闭包，就不是全局变量。将不会被捕获
+        alert(message);
+
+        function func1(){
+            alert("func1 - " + message);
+            function func2(){
+                alert("func2 - " + message);
+                function func3(){
+                    var fun3 = "Yes, I do！"
+                    alert("func3 - " + message + "" +fun3);
+                }
+                func3();//message可以被调用
+            }
+            func2();//message可以被调用
+        }
+        func1();//message可以被调用
+    })();
+
+
+     //匿名函数层层嵌套,来隐藏全局变量使得函数之外的函数不可调用变量，函数之内的函数便可以调用变量
+    (function(){
+        var message = "hello world";
+
+        (function(){
+            alert("func1 -" + message);
+            (function(){
+                alert("func2 -" + message);
+                (function(){
+                    alert("func3 -" + message);
+                })();
+            })();
+        })();
+    })();
+</script>
+</body>
+</html>

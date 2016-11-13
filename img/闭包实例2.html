@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>闭包实例2</title>
+</head>
+<body>
+
+<a href="#" id="dom_1">html</a>
+<a href="#" id="dom_2">css</a>
+<a href="#" id="dom_3">js</a>
+
+<script type="text/javascript">
+    window.onload = domObj;
+
+    function domObj() {
+        for (var i = 1; i <= 3; i++) {
+            var link = document.getElementById("dom_" + i);
+            reglink(link, i);//调用回调函数
+
+        }
+    }
+    function reglink(link, i) {//括号里的为形参，
+        link.onclick = function () {
+            alert("dom_" + i);
+        }
+    }
+
+</script>
+
+</body>
+</html>
